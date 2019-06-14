@@ -88,11 +88,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\ContaPagarIndex.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ClientePessoaFisicaController.cs" />
+    <Compile Include="Controllers\ClientePessoaJuridicaController.cs" />
+    <Compile Include="Controllers\ContaPagarController.cs" />
+    <Compile Include="Controllers\ContaReceberController.cs" />
+    <Compile Include="Controllers\EnderecoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -101,6 +107,8 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
+    <Content Include="Views\ContaPagar\Cadastro.cshtml" />
+    <Content Include="Views\ContaPagar\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -110,8 +118,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\ClientePessoaFisica\" />
+    <Folder Include="Views\ClientePessoaJuridica\" />
+    <Folder Include="Views\ContaReceber\" />
+    <Folder Include="Views\Endereco\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

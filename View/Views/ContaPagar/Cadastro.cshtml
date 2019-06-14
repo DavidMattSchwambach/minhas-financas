@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CadastroContaPagar</title>
+</head>
+<body>
+    <div> 
+        <form action="/contaPagar/store" method="post">
+            <div>
+                <label for="campo">Nome</label>
+                <input type="text" name="nome" id="campo-nome"/>
+            </div>
+
+            <div>
+                <label for="campo">Valor</label>
+                <input type="text" number="valor" id="campo-valor"/>
+            </div>
+
+            <div>
+                <label for="campo">Tipo</label>
+                <input type="text" name="tipo" id="campo-tipo"/>
+            </div>
+
+            <div>
+                <label for="campo">Descrição</label>
+                <input type="text" name="descricao" id="campo-descricao"/>
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>
