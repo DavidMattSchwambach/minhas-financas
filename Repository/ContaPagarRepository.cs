@@ -13,6 +13,11 @@ namespace Repository
     {
         private Conexao conexao;
 
+        public ContaPagarRepository()
+        {
+            conexao = new Conexao();
+        }
+
         public bool Apagar(int id)
         {
             SqlCommand comando = conexao.conectar();
@@ -26,7 +31,7 @@ namespace Repository
         public bool Atualizar(ContaPagar contapagar)
         {
             SqlCommand comando = conexao.conectar();
-            comando.CommandText = "SELECT contas_pagar SET nome = @NOME, valor = @VALOR, tipo = @TIPO, descricao = @DESCRICAO, status = @STATUS WHERE id = @ID";
+            comando.CommandText = "UPDATE contas_pagar SET nome = @NOME, valor = @VALOR, tipo = @TIPO, descricao = @DESCRICAO, status = @STATUS WHERE id = @ID";
             comando.Parameters.AddWithValue("@NOME", contapagar.Nome);
             comando.Parameters.AddWithValue("@VALOR", contapagar.Valor);
             comando.Parameters.AddWithValue("@TIPO", contapagar.Tipo);
@@ -80,7 +85,7 @@ namespace Repository
         public List<ContaPagar> ObterTodos(string busca)
         {
             SqlCommand comando = conexao.conectar();
-            comando.CommandText = "SELECT * FROM contas_pagar WHERE LIKE @NOME";
+            comando.CommandText = "SELECT * FROM contas_pagar WHERE nome LIKE @NOME";
             busca = $"%{busca}%";
             comando.Parameters.AddWithValue("@NOME", busca);
 

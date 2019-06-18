@@ -1,1 +1,9 @@
-﻿
+﻿.tabela{
+    width: 100%;
+    background-color: darkblue;
+    Color: white;
+}
+.th{
+    height: 30px;
+    padding-left: 10px;
+}

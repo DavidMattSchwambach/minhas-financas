@@ -109,6 +109,7 @@
     <None Include="packages.config" />
     <Content Include="Views\ContaPagar\Cadastro.cshtml" />
     <Content Include="Views\ContaPagar\Index.cshtml" />
+    <Content Include="Views\ContaPagar\Editar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -123,6 +124,16 @@
     <Folder Include="Views\ClientePessoaJuridica\" />
     <Folder Include="Views\ContaReceber\" />
     <Folder Include="Views\Endereco\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{178b3912-e602-4651-8c62-ccadfa42b53f}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repository\Repository.csproj">
+      <Project>{e99af1e3-db46-412c-b3ca-ac83f90fc177}</Project>
+      <Name>Repository</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -8,11 +8,11 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>CadastroContaPagar</title>
+    <title>Cadastro</title>
 </head>
 <body>
     <div> 
-        <form action="/contaPagar/store" method="post">
+        <form action="/contapagar/store" method="post">
             <div>
                 <label for="campo">Nome</label>
                 <input type="text" name="nome" id="campo-nome"/>
@@ -20,7 +20,7 @@
 
             <div>
                 <label for="campo">Valor</label>
-                <input type="text" number="valor" id="campo-valor"/>
+                <input type="number" name="valor" id="campo-valor"/>
             </div>
 
             <div>
@@ -31,6 +31,16 @@
             <div>
                 <label for="campo">Descrição</label>
                 <input type="text" name="descricao" id="campo-descricao"/>
+            </div>
+
+            <div>
+                <label for="campo">Status</label>
+                <input type="text" name="status" id="campo-status" />
+            </div>
+
+            <div>
+                <button type="submit">Salvar</button>
+                
             </div>
 
         </form>
