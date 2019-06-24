@@ -9,6 +9,14 @@ namespace Repository
 {
     interface IContaReceberRepository
     {
-      
+        int Inserir(ContaReceber contaReceber);
+
+        bool Apagar(int id);
+
+        bool Atualizar(ContaReceber contaReceber);
+
+        ContaReceber ObterPeloId(int id);
+
+        List<ContaReceber> ObterTodos(string busca);
     }
 }

@@ -56,6 +56,7 @@ namespace Repository
             comando.Connection.Close();
             return id;
         }
+
         public ContaPagar ObterPeloId(int id)
         {
             SqlCommand comando = conexao.conectar();
