@@ -1,0 +1,42 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <h1>Conta Receber</h1>
+    </div>
+    <a href="/contaReceber/cadastro">Cadastrar contas para Receber</a>
+
+    <form action="/contaReceber/index" method="get">
+        <label for="campo_pesquisa">Pesquisa</label>
+        <input type="text" id="campo_pesquisa" name="pesquisa"/>
+    </form>
+
+    <div>
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Valor</th>
+                    <th>Tipo</th>
+                    <th>Descrição</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+               
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
