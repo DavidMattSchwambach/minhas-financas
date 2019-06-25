@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -59,12 +60,55 @@ namespace Repository
 
         public ContaReceber ObterPeloId(int id)
         {
-            throw new NotImplementedException();
+            SqlCommand comando = conexao.conectar();
+            comando.CommandText = "SELECT * FROM contas_receber WHERE id = @ID";
+            comando.Parameters.AddWithValue("@ID", id);
+
+            DataTable tabela = new DataTable();
+            tabela.Load(comando.ExecuteReader());
+            comando.Connection.Close();
+            if (tabela.Rows.Count == 0)
+            {
+                return null;
+            }
+
+            DataRow linha = tabela.Rows[0];
+            ContaReceber contaReceber = new ContaReceber();
+            contaReceber.Id = Convert.ToInt32(linha["id"]);
+            contaReceber.Nome = linha["nome"].ToString();
+            contaReceber.Valor = Convert.ToDecimal(linha["valor"]);
+            contaReceber.Tipo = linha["tipo"].ToString();
+            contaReceber.Descricao = linha["descricao"].ToString();
+            contaReceber.Status = linha["status"].ToString();
+            return contaReceber;
         }
 
         public List<ContaReceber> ObterTodos(string busca)
         {
-            throw new NotImplementedException();
+            SqlCommand comando = conexao.conectar();
+            comando.CommandText = "SELECT * FROM contas_receber WHERE nome LIKE @NOME";
+            busca = $"%{busca}%";
+            comando.Parameters.AddWithValue("@NOME", busca);
+
+            DataTable tabela = new DataTable();
+            tabela.Load(comando.ExecuteReader());
+            comando.Connection.Close();
+            List<ContaReceber> contas_receber = new List<ContaReceber>();
+            for (int i = 0; i < tabela.Rows.Count; i++)
+            {
+                DataRow linha = tabela.Rows[0];
+                ContaReceber contaReceber = new ContaReceber();
+                contaReceber.Id = Convert.ToInt32(linha["id"]);
+                contaReceber.Nome = linha["nome"].ToString();
+                contaReceber.Valor = Convert.ToDecimal(linha["valor"]);
+                contaReceber.Tipo = linha["tipo"].ToString();
+                contaReceber.Descricao = linha["descricao"].ToString();
+                contaReceber.Status = linha["status"].ToString();
+
+                contas_receber.Add(contaReceber);
+
+            }
+            return contas_receber;
         }
     }
 }
